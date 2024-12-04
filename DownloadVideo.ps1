@@ -41,7 +41,7 @@ if ($selectedFormats) {
     Write-Host "Attempting to download and merge formats..."
     $output = & "$YTDownloader" --no-warnings -q --print after_move:filepath -f "$SelectedIDs" $URL
     # Display the full path to the downloaded video file
-    $filename = ($out -split '`n')[-1]   #output has a number of lines. Get the last one for the actual filename.
+    $filename = ($output -split '`n')[-1]   #output has a number of lines. Get the last one for the actual filename.
     Write-Host "File saved to: " -NoNewLine
     Write-Host $filename -ForegroundColor Green
 } else {
